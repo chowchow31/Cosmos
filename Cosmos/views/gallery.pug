@@ -1,0 +1,90 @@
+extends layout
+
+block content
+
+  //-*************  desktop  ****************
+  .horizontal-wrapper.d-none.d-lg-block
+    .horizontal-scrolling.gallery-scrolling.fadeRightLeft.h-100
+      table.table-bordered.h-100
+        tbody
+          tr.vh-16
+            td.align-middle.text-center.vw-5
+              text.text-header.lvh-6
+                | 作
+                br
+                | 品
+            td(rowspan='3').align-middle.text-center.vw-40
+              .mx-4
+                img.page-image.lazyload(src='/images/work_start.jpg', data-src='/images/work.gif', alt='Gallery')
+            td(rowspan='3').align-middle.text-center.vw-110
+              ul.list-inline.my-xl-3
+                li.list-inline-item.mr-xl-5.mr-3.text-left
+                  a(href='/work')
+                    .work-wrapper.border-all.mb-4
+                    text.title PROJECT TITLE HERE
+                li.list-inline-item.mr-xl-5.mr-3.text-left
+                  a(href='/work')
+                    .work-wrapper.border-all.mb-4
+                    text.title PROJECT TITLE HERE
+                li.list-inline-item.text-left
+                  a(href='/work')
+                    .work-wrapper.border-all.mb-4
+                    text.title PROJECT TITLE HERE
+
+          tr
+            td.align-middle.text-center
+              img.copyright(src='/images/copyright.png', alt='© 2019 COSMOS. ALL RIGHTS RESERVED.')
+ 
+          tr.vh-10 
+            td.align-middle.text-center
+              text.text-header.lvh-6  館
+
+
+  //-*************  mobile  ****************
+  .mobile-wrap.container-fluid.d-lg-none
+    //- text
+    .row.border-all.mt-3
+      .col-10.border-right.lvh-10
+        text.text-header &nbsp;作&nbsp;&nbsp;品
+      .col-2.text-center.lvh-10
+        text.text-header 館
+    //- work gallery logo
+    .row.border-bottom.border-left.border-right
+      .col-12.text-center.my-4
+          img.page-image.lazyload(src='/images/work_start.jpg', data-src='/images/work.gif')
+    //- works
+    .row.border-left.border-right.border-bottom
+      .col-12.mt-5
+        .justify-content-center.align-self-center.mx-2
+          a(href='/work')
+            .work-wrapper.border-all.mb-4
+            text.title PROJECT TITLE HERE
+      .col-12.mt-5
+        .justify-content-center.align-self-center.mx-2
+          a(href='/work')
+            .work-wrapper.border-all.mb-4
+            text.title PROJECT TITLE HERE
+      .col-12.mt-5.mb-5
+        .justify-content-center.align-self-center.mx-2
+          a(href='/work')
+            .work-wrapper.border-all.mb-4
+            text.title PROJECT TITLE HERE
+
+
+  script(type='text/javascript').
+    $(document).ready(function(){
+      var multiplier = 20;
+      var container =  $('.horizontal-wrapper');
+
+      container.mousewheel(function(e){
+        //-console.log(e.deltaX, e.deltaY, e.deltaFactor);
+        container.scrollLeft(container.scrollLeft()-e.deltaY*multiplier);
+        e.preventDefault();
+      });
+
+      //- lazyload
+      $("img.lazyload").lazyload({effect : "fadeIn"}); 
+    });
+
+
+

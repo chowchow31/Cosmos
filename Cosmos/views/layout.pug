@@ -1,0 +1,19 @@
+doctype html
+html(lang="zh-TW")
+  head
+    include ./partials/header.pug
+
+  body
+    .m-3.m-lg-4
+
+      //-*************  navbar  ****************
+      include ./partials/navbar.pug
+
+      //-*************  content  ****************
+      block content
+
+      //-*************  menu  ****************
+      include ./partials/menu.pug     
+
+    //-*************  js  ****************
+    include ./partials/script.pug

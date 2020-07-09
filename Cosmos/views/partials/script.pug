@@ -1,0 +1,73 @@
+//- bootstrap
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49', crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js', integrity='sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T', crossorigin='anonymous')
+//- jquery-i18next
+script(src='https://cdnjs.cloudflare.com/ajax/libs/i18next/12.0.0/i18next.min.js') 
+script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-i18next/1.2.1/jquery-i18next.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/1.5.1/i18nextXHRBackend.min.js')
+//- mousewheel
+//-script(src='https://totodunet.github.io/endless/js/endless.min.js')
+script(src='https://totodunet.github.io/endless/js/jquery.mousewheel.js')
+//- lazyload
+script(src='https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js')
+//- jquery.marquee
+//-script(src='//cdn.jsdelivr.net/npm/jquery.marquee@1.5.0/jquery.marquee.min.js', type='text/javascript')
+
+
+script(type='text/javascript').
+  $(document).ready(function(){
+    //- menu
+    $('img.nav-menu-image').click(function() {
+        if ($('.mobile-wrap').is(":visible") ) {
+             $('.mobile-wrap').hide();
+        } else { //if ($(.mobile-wrap).is(":hidden") ) {
+            $('.mobile-wrap').show();
+        }
+        $('.menu-wrap').fadeToggle(100);
+        $('.menu-circle').fadeToggle(500);
+        $('.menu-item-wrap').fadeToggle(1000);
+    });
+
+
+    $('.menu-home').hover(function() {
+        $(this).toggleClass("marquee-left-fast marquee-left-slow")
+    });
+    $('.menu-about').hover(function() {
+        $(this).toggleClass("marquee-right-fast marquee-right-slow")
+    });
+    $('.menu-contact').hover(function() {
+        $(this).toggleClass("marquee-right-fast marquee-right-slow")
+    });
+
+    //- marquee
+    /*$('.marquee').marquee({
+        speed: 5000,
+        gap: 50,
+        delayBeforeStart: 5000,
+        direction: 'left',
+        duplicated: true
+    });*/
+
+
+    //- change language
+    /*function selectLanguage(selectedLang) {
+        var lang = selectedLang 
+        var url = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/changeLanguage/' + lang;
+        $.ajax({
+            type: 'GET',
+            url: url,
+            datatype: 'json',
+            success: function (data) {
+                location.reload();
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log('error: ' + textStatus + " " + errorThrown);
+            },
+            timeout: 10000
+        });
+    }*/
+
+  });
+
+
+

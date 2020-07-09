@@ -1,0 +1,76 @@
+
+
+.menu-wrap.hidden
+
+  //-*************  desktop  ****************
+  .menu.d-none.d-sm-block
+    .container-fluid.h-100.menu-circle.hidden
+      .row.border-all.h-100
+        .col-12.my-auto.p-0(style='overflow:hidden;')
+          div.menu-item-wrap.hidden
+            a(href='/')
+              .menu-marquee-left.fadeRightLeft
+                div.menu-home.marquee-left-fast
+                  span
+                    img.menu-item(src='/images/00_home.png')
+                  span
+                    img.menu-item(src='/images/00_home.png')
+            a(href='/about')
+              .menu-marquee-right.fadeLeftRight
+                div.menu-about.marquee-right-fast
+                  span
+                    img.menu-item(src='/images/01_about.png')
+                  span
+                    img.menu-item(src='/images/01_about.png')
+            //-a(href='/gallery')
+            a.default(href='#')
+              .menu-marquee-left.fadeRightLeft
+                div.menu-work.marquee-left-fast
+                  span
+                    img.menu-item(src='/images/02_work.png')
+                  span
+                    img.menu-item(src='/images/02_work.png')
+            a(href='/contact')
+              .menu-marquee-right.fadeLeftRight
+                div.menu-contact.marquee-right-fast
+                  span
+                    img.menu-item(src='/images/03_contact.png')
+                  span
+                    img.menu-item(src='/images/03_contact.png')
+
+  //-*************  mobile  ****************
+  .menu.d-sm-none
+    .container-fluid.h-100.menu-circle.hidden
+      .row.border-all.h-100
+        .col-12.my-auto.p-0(style='overflow:hidden;')
+          div.menu-item-wrap.hidden
+            a(href='/')
+              .menu-marquee-left.fadeRightLeft
+                div.menu-home.marquee-left-fast
+                  span
+                    img.menu-item(src='/images/00_home_mobile.png')
+            a(href='/about')
+              .menu-marquee-right.fadeLeftRight
+                div.menu-about.marquee-right-fast
+                  span
+                    img.menu-item(src='/images/01_about_mobile.png')
+            //-a(href='/gallery')
+            a.default(href='#')
+              .menu-marquee-left.fadeRightLeft
+                div.menu-work.marquee-left-fast
+                  span
+                    img.menu-item(src='/images/02_work_mobile.png')
+            a(href='/contact')
+              .menu-marquee-right.fadeLeftRight
+                div.menu-contact.marquee-right-fast
+                  span
+                    img.menu-item(src='/images/03_contact_mobile.png')
+
+      .row.border-left.border-right.border-bottom.d-lg-none.lvh-10
+        .col-12.align-self-center.text-center
+          img.copyright(src='/images/copyright_mobile.png')
+
+
+script(type='text/javascript').
+  $(document).ready(function(){
+  });

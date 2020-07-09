@@ -1,0 +1,136 @@
+extends layout
+
+block content
+
+  //-*************  desktop  ****************
+  .horizontal-wrapper.d-none.d-lg-block
+    .horizontal-scrolling.work-scrolling.fadeRightLeft.h-100
+      table.table-bordered.h-100
+        tbody
+          tr.vh-16
+            td(rowspan='2').align-middle.text-center.vw-5
+              text.text-header.lvh-6
+                | 作
+                br
+                | 品
+            td.vw-6.align-middle.text-center.text-small
+              text YEAR : 2019
+
+            td(rowspan='2').align-middle.text-right.vw-35
+              .mr-lg-3
+                text.text-header COWBOY BIKE
+                br
+                .mt-lg-1
+                  text.subtitle BRANDING IDENTITY
+            td(rowspan='4').align-middle.text-center.w-100
+              ul.list-inline.my-xl-3
+                li.list-inline-item.mr-xl-5.mr-3
+                  .work-wrapper.border-all
+                li.list-inline-item.mr-xl-5.mr-3
+                  .work-wrapper.border-all
+                li.list-inline-item
+                  .work-wrapper.border-all
+
+          tr
+            td.align-middle.text-center
+              a(href='/gallery')
+                img.back.vh-6(src='/images/back_arrow_work.png', alt='back to gallery')
+          tr 
+            td.align-middle.text-center.p-0.m-0
+              .vw-5
+                img.copyright-work(src='/images/copyright.png', alt='© 2019 COSMOS. ALL RIGHTS RESERVED.')
+
+            td(rowspan='2',colspan='2')
+              .mx-lg-4.mt-lg-4.vw-38(style='height:50vh;overflow-y:scroll;')
+                text.h6 DESCRIPTION
+                div.mt-lg-4.text-small
+                  | Please note that vertical-align only affects inline, inline-block,
+                  | inline-table, and table cell elements.
+                  | Change the alignment of elements with the vertical-alignment utilities.
+                  | Please note that vertical-align only affects inline, inline-block,
+                  br
+                  br
+                  | Change the alignment of elements with the vertical-alignment utilities.
+                  | Please note that vertical-align only affects inline, inline-block,
+                  | inline-table, and table cell elements.
+                  | Change the alignment of elements with the vertical-alignment utilities.
+ 
+          tr.vh-10
+            td.align-middle.text-center
+              text.text-header.lvh-6  館
+
+
+  //-*************  mobile  ****************
+  .mobile-wrap.container-fluid.d-lg-none
+    //- text
+    .row.border-all.mt-3
+      .col-10.border-right.lvh-10
+        text.text-header &nbsp;作&nbsp;&nbsp;品
+      .col-2.text-center.lvh-10
+        text.text-header 館
+    //- work title
+    .row.border-bottom.border-left.border-right
+      .col-3.text-center.border-right
+        .row.h-100
+          .col-12.border-bottom
+            .justify-content-center.align-self-center.text-small
+              .my-5
+                text YEAR: 2019
+          .col-12.justify-content-center.align-self-center
+             .my-3
+                a(href='/gallery')
+                 img.back(src='/images/back_arrow_work.png', alt='back to gallery')
+      .col-9.text-right
+        .my-5
+          text.h3 COWBOY BIKE
+          br
+          .mt-2
+            text.subtitle BRANDIDNG IDENTITY
+    //- description
+    .row.border-bottom.border-left.border-right
+      .col-12
+        .my-5.mx-2
+          text.title DESCRIPTION
+          br
+          br
+          br
+          p
+            | Please note that vertical-align only affects inline, inline-block,
+            | inline-table, and table cell elements.
+            | Change the alignment of elements with the vertical-alignment utilities.
+            | Please note that vertical-align only affects inline, inline-block,
+            | inline-table, and table cell elements.
+            | Change the alignment of elements with the vertical-alignment utilities.
+            | Please note that vertical-align only affects inline, inline-block,
+            | inline-table, and table cell elements.
+            | Change the alignment of elements with the vertical-alignment utilities.
+    //- images
+    .row.border-left.border-right.border-bottom
+      .col-12.mt-4
+        .justify-content-center.align-self-center.mx-2
+          .work-wrapper.border-all.w-100
+      .col-12.mt-4
+        .justify-content-center.align-self-center.mx-2
+          .work-wrapper.border-all.w-100
+      .col-12.mt-4.mb-5
+        .justify-content-center.align-self-center.mx-2
+          .work-wrapper.border-all.w-100
+
+
+
+  script(type='text/javascript').
+    $(document).ready(function(){
+      var multiplier = 20;
+      var container =  $('.horizontal-wrapper');
+      
+      //$('.horizontal-scrolling').endless({
+      //  direction:'horizontal',
+      //  scrollbar:'disable'
+      // });
+      
+      container.mousewheel(function(e){
+        //-console.log(e.deltaX, e.deltaY, e.deltaFactor);
+        container.scrollLeft(container.scrollLeft()-e.deltaY*multiplier);
+        e.preventDefault();
+      });
+    });

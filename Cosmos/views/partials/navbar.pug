@@ -1,0 +1,23 @@
+//-*************  desktop  ****************
+.container-fluid.mb-lg-4.lvh-10.d-none.d-lg-block
+  .row.border-all
+    //- cosmos
+    .col-12.p-0.m-0
+      .d-flex.justify-content-between
+        div
+          a(href='/')
+            img.nav-logo.ml-2.ml-lg-4(src='/images/logo_typeface.png')
+        div.nav-menu.text-center.border-left
+          img.nav-menu-image.pointer(src='/images/menu_hamburger.png')
+
+
+//-*************  mobile  ****************
+.container-fluid.mb-lg-4.lvh-10.d-lg-none
+  .row.border-all
+    //- cosmos
+    .col-10.col-lg-11.align-self-center.h-100
+      a(href='/')
+        img.nav-logo.ml-2.ml-lg-4(src='/images/logo_typeface.png')
+    //- right menu button
+    .col-2.col-lg-1.text-center.border-left.align-self-center.h-100
+      img.nav-menu-image.pointer(src='/images/menu_hamburger.png')

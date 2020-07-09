@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  .container-fluid.border-all
+    .row
+      .col-12
+        h3= message
+        h5= error.status
+        pre #{error.stack}

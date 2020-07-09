@@ -1,0 +1,232 @@
+extends layout
+
+block content
+  //-*************  desktop  ****************
+  .horizontal-wrapper.d-none.d-lg-block
+    .horizontal-scrolling.about-scrolling.fadeRightLeft.h-100
+      table.table-bordered.h-100
+        tbody
+          tr.vh-16
+            td.align-middle.text-center.vw-5
+              text.text-header.lvh-6
+                | 有
+                br
+                | 關
+            td(rowspan='3').align-middle.text-center.vw-40
+              .mx-4
+                img.page-image.lazyload(src='/images/about_start.jpg', data-src='/images/about.gif', alt='About')
+            td(rowspan='3').vw-33
+              .row.h-100.m-0
+                .col-12.text-right.border-bottom.p-0.about-wrap
+                  img.m-4.about-logo(src='/images/logo_about.gif', alt='logo')
+                .col-12.text-left.p-0.about-text-wrap.h-100
+                  div.text-large.m-2.m-lg-4
+                    | COSMOS IS A
+                    br
+                    | CREATIVE STUDIO
+                    br
+                    | BASED IN TAIPEI,
+                    br
+                    | FOCUSING ON
+                    br
+                    | CREATIVITY
+                    br
+                    | THAT BUILDS
+                    br
+                    | BRAND
+                    //-br
+                    //-text.text-small (PREPARATORY OFFICE)
+            td(colspan='3').align-middle
+              .container-fluid
+                .row
+                  .col-12
+                    .ml-3.ml-xl-4
+                      text.title-TC 服務項目
+                      br
+                      text.title.DIN-Alternate #{i18n.t("app.services")}
+
+          tr
+            td.align-middle.text-center
+              img.copyright(src='/images/copyright.png', alt='© 2019 COSMOS. ALL RIGHTS RESERVED.')
+            //-td.align-bottom.text-center
+              .text-vertical-left.vw-5
+                text.footer-text © 2019 COSMOS. ALL RIGHTS RESERVED.
+
+            td(rowspan='2').vw-30
+              .container-fluid.h-100
+                .row.h-100
+                  .col-lg-12.text-right.p-0.m-0
+                      img.about-image-group.mt-4.mr-4(name='eye', src='/images/astronaut_loop.gif')
+                  .col-lg-12.align-self-end.p-0.m-0
+                    .mx-4.mb-4
+                      text.h4.DIN-Alternate #{i18n.t("app.brand")}
+                      br
+                      text.sub-title #{i18n.t("app.perceptions")}
+                      ul.text-list.mt-1.mt-xl-3.text-small
+                        li
+                          text #{i18n.t("app.brand_strategy")}&nbsp;品牌策略
+                        li
+                          text #{i18n.t("app.identity")}&nbsp;識別設計
+                        li
+                          text #{i18n.t("app.identity_system")}&nbsp;識別設計系統
+            td(rowspan='2').vw-30
+              .container-fluid.h-100
+                .row.h-100
+                  .col-lg-12.text-right.p-0.m-0
+                      img.about-image-group.mt-4.mr-4(name='waves',src='/images/waves_loop.gif')
+                  .col-lg-12.align-self-end.p-0.m-0
+                    .mx-4.mb-4
+                      text.h4.DIN-Alternate #{i18n.t("app.story")}
+                      br
+                      text.sub-title #{i18n.t("app.structuring_creative")}
+                      ul.text-list.mt-1.mt-xl-3.text-small
+                        li
+                          text #{i18n.t("app.storytelling")}&nbsp;說故事
+                        li
+                          text #{i18n.t("app.campaign_strategy")}&nbsp;廣告活動策略
+                        li
+                          text #{i18n.t("app.campaign_creative")}&nbsp;廣告活動創意
+            td(rowspan='2').vw-30
+              .container-fluid.h-100
+                .row.h-100
+                  .col-lg-12.text-right.p-0.m-0
+                      img.about-image-group.mt-4.mr-4(name='astronaut',src='/images/eye_loop.gif')
+                  .col-lg-12.align-self-end.p-0.m-0
+                    .mx-4.mb-4
+                      text.h4.DIN-Alternate #{i18n.t("app.design")}
+                      br
+                      text.sub-title #{i18n.t("app.visual_communication")}
+                      ul.text-list.mt-1.mt-xl-3.text-small
+                        li
+                          text #{i18n.t("app.graphic_design")}&nbsp;平面設計
+                        li
+                          text #{i18n.t("app.ui_ux")}&nbsp;使用者經驗
+                        li
+                          text #{i18n.t("app.websites")}&nbsp;網站
+          
+          tr.vh-10
+            td.align-middle.text-center.vw-5
+              text.text-header 於
+
+
+  //-*************  mobile  ****************
+  .mobile-wrap.container-fluid.d-lg-none
+    //- text
+    .row.border-all.mt-3
+      .col-10.border-right.lvh-10.align-self-center
+        text.text-header &nbsp;有&nbsp;&nbsp;關
+      .col-2.text-center.lvh-10.align-self-center
+        text.text-header  於
+    //- about logo
+    .row.border-bottom.border-left.border-right
+      .col-12.text-center.my-4
+          img.page-image.lazyload(src='/images/about_start.jpg',data-src='/images/about.gif', alt='About')
+    //- description
+    .row.border-bottom.border-left.border-right
+      .col-12.p-0.m-0
+        .text-left.m-4
+          img.about-logo(src='/images/logo_about.gif', alt='logo')
+      .col-12.p-0.mt-4
+        div.text-large.p-4.text-right
+          | COSMOS IS A
+          br
+          | CREATIVE STUDIO
+          br
+          | BASED IN TAIPEI,
+          br
+          | FOCUSING ON
+          br
+          | CREATIVITY
+          br
+          | THAT BUILDS
+          br
+          | BRAND
+    //- images
+    .row.border-left.border-right.border-bottom
+      .col-12.p-0
+        .m-4
+          text.title-TC 服務項目
+          br
+          text.title.DIN-Alternate #{i18n.t("app.services")}
+    .row.border-left.border-right.border-bottom
+      .col-12
+        .row
+          .col-12.text-right.p-0.m-0
+              img.about-image-group.mx-4.my-4(name='astronaut',src='/images/astronaut_loop.gif')
+          .col-12.p-0.m-0.align-self-end
+            .mx-4.my-4
+              text.h4.DIN-Alternate #{i18n.t("app.brand")}
+              br
+              text.sub-title #{i18n.t("app.perceptions")}
+              br
+              ul.text-small.mt-3
+                li
+                  text #{i18n.t("app.brand_strategy")}&nbsp;品牌策略
+                li
+                  text #{i18n.t("app.identity")}&nbsp;識別設計
+                li
+                  text #{i18n.t("app.identity_system")}&nbsp;識別設計系統
+    .row.border-left.border-right.border-bottom
+      .col-12
+        .row
+          .col-12.text-right.p-0.m-0
+              img.about-image-group.mx-4.my-4(name='waves',src='/images/waves_loop.gif')
+          .col-12.p-0.m-0.align-self-end
+            .mx-4.my-4
+              text.h4.DIN-Alternate #{i18n.t("app.story")}
+              br
+              text.sub-title #{i18n.t("app.structuring_creative")}
+              br
+              ul.text-small.mt-3
+                li
+                  text #{i18n.t("app.storytelling")}&nbsp;說故事
+                li
+                  text #{i18n.t("app.campaign_strategy")}&nbsp;廣告活動策略
+                li
+                  text #{i18n.t("app.campaign_creative")}&nbsp;廣告活動創意
+
+    .row.border-left.border-right.border-bottom
+      .col-12
+        .row
+          .col-12.text-right.p-0.m-0
+              img.about-image-group.mx-4.my-4(name='eye',src='/images/eye_loop.gif')
+          .col-12.p-0.m-0.align-self-end
+            .mx-4.my-4
+              text.h4.DIN-Alternate #{i18n.t("app.design")}
+              br
+              text.sub-title #{i18n.t("app.visual_communication")}
+              br
+              ul.text-small.mt-3
+                li
+                  text #{i18n.t("app.graphic_design")}&nbsp;平面設計
+                li
+                  text #{i18n.t("app.ui_ux")}&nbsp;使用者經驗
+                li
+                  text #{i18n.t("app.websites")}&nbsp;網站
+
+
+
+
+
+  script(type='text/javascript').
+    $(document).ready(function(){
+      var multiplier = 20;
+      var container =  $('.horizontal-wrapper');
+      
+      //- $('.horizontal-scrolling').endless({
+      //  direction:'horizontal',
+      //  scrollbar:'disable'
+      // });
+      
+      container.mousewheel(function(e){
+        //-console.log(e.deltaX, e.deltaY, e.deltaFactor);
+        container.scrollLeft(container.scrollLeft()-e.deltaY*multiplier);
+        e.preventDefault();
+      });
+
+      //- lazyload
+      $("img.lazyload").lazyload({effect : "fadeIn"});
+
+    });
+
+

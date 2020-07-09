@@ -1,0 +1,196 @@
+extends layout
+
+block content
+  //-*************  loading  ****************
+  include ./partials/loading.pug
+  
+  //-*************  desktop  ****************
+  .index-container.container-fluid.d-none.d-lg-block
+      //- row 1
+      .row.mb-lg-4
+        //- left logo
+        .col-lg-4.text-center.border-all.justify-content-center.align-self-center.p-0.m-0.index-logo-wrap.d-flex
+            img#index-logo.index-logo-image(src='/images/logo.gif', alt='Cosmos Logo')
+        //- right
+        .col-lg-8
+          .row
+            //- contact
+            .col-lg-6.ml-lg-0.pl-lg-0
+              .row.border-all.ml-lg-4.mb-lg-2
+                .col-lg-5.text-left.justify-content-center.align-self-center.p-0.m-0
+                  .ml-2.ml-lg-4
+                    a#contact-text.text-caption.hidden(href='/contact') #{i18n.t("app.project_inquiry")} 
+                .col-lg-7.text-right.lvh-24.justify-content-center.align-self-center.p-0.m-0
+                    a(href='/contact')
+                      img.index-contact-image.mr-2.mr-lg-4.my-2.my-lg-4(src='/images/coffee.gif', alt='contact')
+            //- work gallery
+            .col-lg-6.ml-lg-0.pl-lg-0
+              .row.border-all.ml-lg-4.mb-lg-2
+                .col-lg-5.text-left.justify-content-center.align-self-center.p-0.m-0
+                   .ml-2.ml-lg-4
+                      a#gallery-text.text-caption.hidden(href='/work') #{i18n.t("app.featured_project")}
+                .col-lg-7.text-right.lvh-24.justify-content-center.align-self-center.p-0.m-0
+                  //-a(href='/work')
+                  a.default(href='#')
+                    img.index-gallery-image.mr-2.mr-lg-4.my-2.my-lg-4(src='/images/camera.gif', alt='work')
+          .row
+            .col-lg-12.ml-lg-0.pl-lg-0
+              .row.border-all.ml-lg-4.mt-lg-3
+                .col-lg-6.vh-24.index-ball-xsmall
+                .col-lg-6.vh-24.index-ball-large
+    
+      //- row 2
+      .row
+        .col-lg-8.text-center.index-bottom-row
+          //- about
+          .row.border-all.h-100
+            .col-9.col-lg-10.d-flex.h-100.p-0.m-0
+              .ml-2.ml-lg-4.my-2.my-xl-4.text-left.w-100
+                a(href='/about')
+                  img.index-about-image.mr-2.mr-lg-4(name='eye', src='/images/eye.gif')
+                  img.index-about-image.mr-2.mr-lg-4(name='waves',src='/images/waves.gif')
+                  img.index-about-image.mr-2.mr-lg-4(name='astronaut',src='/images/astronaut.gif', alt='about')
+            .col-3.col-lg-2.align-self-center.text-right.p-0.m-0
+              .mr-2.mr-lg-4
+                text#about-text.text-right.text-caption.hidden #{i18n.t("app.services")}
+        //- social media button   
+        .col-lg-4.ml-lg-0.pl-lg-0.h-100
+          .ml-lg-4.row.border-all.index-bottom-row
+            .col-12.align-self-center.text-right.p-0.m-0
+                a.default(href='#')
+                  img.icon-fb.mr-2.mr-lg-4.mb-1.mb-xl-2(src='/images/icon_fb.png', alt='facebook')
+                br
+                a.default(href='#')
+                  img.icon-be.mr-2.mr-lg-4.mt-1.mt-xl-2(src='/images/icon_behance.png', alt='behance')
+ 
+
+  //-*************  mobile  ****************
+  .index-container.mobile-wrap.container-fluid.d-lg-none
+    //- logo
+    .row.mt-3
+      .col-12.text-center.border-all
+        .m-5.text-center
+          img.index-logo-image(src='/images/logo_mobile.gif', alt='Cosmos logo')
+ 
+    //- WORK GALLERY
+    .row.mt-3
+      .col-12.text-center.border-all
+        //-a(href='/work')
+        a.default(href='#')
+          .row.h-100.align-items-center
+            .col-6.m-0.p-0
+                img.index-gallery-image.mx-4.my-4(src='/images/camera.gif', alt='work')
+            .col-6.justify-content-center.align-self-center.text-right.m-0.p-0
+              .mx-4
+                text.text-caption.text-warp #{i18n.t("app.featured_project")}
+
+    //- about
+    .row.mt-3
+      .col-12.text-center.border-all
+        a(href='/about')
+          .row.h-100.align-items-center.py-4
+            .col-6.m-0.p-0
+              img.index-about-image-group.mx-4(name='eye', src='/images/eye.gif')
+            .col-6.justify-content-center.align-self-center.text-right.m-0.p-0
+              .mr-4
+                text.text-caption.text-warp #{i18n.t("app.services")} 
+            .col-6.m-0.p-0.text-center.mt-3
+              img.index-about-image-group.align-top.mx-4(name='waves',src='/images/waves.gif')
+            .col-6.m-0.p-0.text-right.mt-3
+              img.index-about-image-group.align-top.mr-4(name='astronaut',src='/images/astronaut.gif', alt='about')
+
+    //- CONTACT
+    .row.mt-3
+      .col-12.text-center.border-all
+        a(href='/contact')
+          .row.h-100.align-items-center
+            .col-6.justify-content-center.align-self-center.text-left.p-0.m-0
+              .ml-4
+                text.text-caption.text-warp #{i18n.t("app.project_inquiry")}
+            .col-6.m-0.p-0.text-right
+              img.index-gallery-image.mr-4.my-4(src='/images/coffee.gif', alt='contact')
+
+
+    //- fb
+    .row.mt-3
+      .col-12.text-center.border-all.m-0.p-0
+        .index-ball-xsmall
+        .index-ball-large
+          a.default(href='#')
+            img.icon-fb(src='/images/icon_fb.png', alt='facebook')
+          br
+          a.default(href='#')
+            img.icon-be.mt-4(src='/images/icon_behance.png', alt='behance')
+          br
+
+    
+    //-************* js  ****************
+    script(type='text/javascript').
+      $(document).ready(function () {
+
+        //- loading animation
+        $('.index-container').ready(function() {
+          setTimeout( function() { 
+            $('.loading-logo').hide(0);
+            $('#loading').addClass("loading-finished"); 
+            $('#loading').delay(1000).hide(0);
+            }, 2000);
+        });
+
+        //- contact
+        $('img.index-contact-image').hover(function() {
+            $('#contact-text').show();
+          }, function() {
+            $('#contact-text').hide();
+        });
+
+        //- gallery
+        $('img.index-gallery-image').hover(function() {
+            $('#gallery-text').show();
+          }, function() {
+            $('#gallery-text').hide();
+        });
+
+        //- about
+        $('img.index-about-image').hover(function() {
+            $('#about-text').show();
+          }, function() {
+            $('#about-text').hide();
+        });
+
+        //-$('img[name="eye"]').attr("src","/images/eye_loop.gif");
+        //- change image
+        //-$('img[name="eye"]').delay(3000, "eye").queue("eye", function (next) {
+        $('img[name="eye"]').delay(3500).queue(function (next) {
+          $(this).attr("src","/images/eye_loop.gif").show();
+          $(this).dequeue();
+        });
+        $('img[name="waves"]').delay(3500).queue(function (next) {
+          $(this).attr("src","/images/waves_loop.gif").show();
+          $(this).dequeue();
+        });
+        $('img[name="astronaut"]').delay(3500).queue(function (next) {
+          $(this).attr("src","/images/astronaut_loop.gif").show();
+          $(this).dequeue();
+        });
+
+        //- change ball image
+        var ballLargeImages = ['/images/g01_1.gif', '/images/g02_1.gif', '/images/g03_1.gif', '/images/g04_1.gif', '/images/g05_1.gif'];
+        var ballXSmallImages = ['/images/g01_2.gif', '/images/g02_2.gif', '/images/g03_2.gif', '/images/g04_2.gif', '/images/g05_2.gif'];
+        $('.index-ball-large').css({'background-image': 'url(' + ballLargeImages[Math.floor(Math.random() * ballLargeImages.length)] + ')'})
+        $('.index-ball-xsmall').css({'background-image': 'url(' + ballXSmallImages[Math.floor(Math.random() * ballXSmallImages.length)] + ')'})  
+
+        //- onepage_scroll
+        /*
+        $(".onePage").onepage_scroll({
+          sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
+          easing: "linear",          // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
+          animationTime: 500,             // AnimationTime let you define how long each section takes to animate
+          loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
+          keyboard: true,                  // You can activate the keyboard controls
+          responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
+                                            // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
+                                            // the browser's width is less than 600, the fallback will kick in.
+          direction: "horizontal"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".
+        });*/
+      });

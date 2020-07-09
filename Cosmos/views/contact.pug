@@ -1,0 +1,206 @@
+extends layout
+
+block content
+
+  //-*************  desktop  ****************
+  .horizontal-wrapper.d-none.d-lg-block
+    .horizontal-scrolling.contact-scrolling.fadeRightLeft.h-100
+      table.table-bordered.h-100
+        tbody
+          tr.vh-10
+            td.align-middle.text-center.vw-5
+              text.text-header 與
+            td(rowspan='3').align-middle.text-center.vw-40
+              .mx-4
+                img.page-image.lazyload(src='/images/contact_start.jpg',data-src='/images/contact.gif', alt='Contact')
+            td(rowspan='3').vw-60
+              .continer-fluid.h-100
+                .row
+                  .col-6.col-lg-4.col-xl-3.text-right.p-0.m-0.h-100
+                    img.contact-image.mx-3.my-1(src='/images/coffee.gif')
+                  .col-6.col-lg-8.col-xl-9.align-self-center.pl-0.ml-0
+                    text.title-TC 專案詢問
+                    br
+                    text.title.DIN-Alternate #{i18n.t("app.project_inquiry")}
+                .row.border-bottom.p-0.m-0
+                form#formInquiry(action='/contact', method='post')
+                  .row.mx-3.mx-xl-5.mt-3.mt-xl-4
+                    .col-lg-6.mt-xl-2
+                      .form-group
+                          label.sr-only(for='companyName') Company Name
+                          input.form-control(type='text', name='companyName', data-name='Company Name', aria-describedby='emailHelp', placeholder='Name of Your Company*')
+                      .form-group
+                          label.sr-only(for='email') Email
+                          input.form-control(type='email', name='email', data-name='Email', aria-describedby='emailHelp', placeholder='E-mail*', oninvalid="this.setCustomValidity('請輸入正確的email格式')", oninput="this.setCustomValidity('')")
+                    .col-lg-6.mt-xl-2(style='padding-left:5px;')
+                      .form-group
+                          label.sr-only(for='name') Name
+                          input.form-control(type='text', name='name', data-name='Name', aria-describedby='emailHelp', placeholder='Your Name*')
+                      .form-group
+                          label.sr-only(for='phone') Phone
+                          input.form-control(type='tel', name='phone', data-name='Phone', aria-describedby='emailHelp', placeholder='Phone')
+                    .col-lg-12
+                      .form-group
+                          label.sr-only(for='description') Description
+                          textarea.form-control(rows="3", name='description', data-name='Description', aria-describedby='emailHelp', placeholder='Description of Your Project Requirement*')
+                    .col-lg-12
+                      .form-group
+                        - if (alert)
+                          text(name="tooltip").text-small #{alert}
+                        - else
+                          text(name="tooltip").text-small
+                    .col-lg-12
+                      .form-group
+                        button.btn.btn-black.btn-send(type='submit', name='send')
+                          text(style='letter-spacing: 2px;').lvh-4.mr-5 #{i18n.t("app.send")}
+                          img.send(src='/images/send_arrow.png', alt='send')
+            td(rowspan='3').p-0.m-0.align-top
+              div.contact-email
+                img.contact-email-image(src='/images/contact_email.gif', alt='info@bycosmos.co')
+          
+          tr 
+            td.align-middle.text-center
+              img.copyright(src='/images/copyright.png', alt='© 2019 COSMOS. ALL RIGHTS RESERVED.')
+ 
+          tr.vh-16
+            td.align-middle.text-center.vw-5
+              text.text-header.lvh-6
+                | 聯
+                br
+                | 繫
+
+
+  //-*************  mobile  ****************
+  .mobile-wrap.container-fluid.d-lg-none.mt-3
+    //- text
+    .row.border-all
+      .col-2.text-center.border-right.lvh-10
+        text.text-header 與
+      .col-10.text-right.lvh-10
+        text.text-header 聯&nbsp;&nbsp;繫&nbsp;
+    //- contact logo
+    .row.border-bottom.border-left.border-right
+      .col-12.text-center.my-4
+          img.page-image.lazyload(src='/images/contact_start.jpg',data-src='/images/contact.gif', alt='Contact')
+    //- contact image & form
+    .row.border-left.border-right
+      .col-6.col-sm-4.m-0.p-0
+        img.contact-image.m-4(src='/images/coffee.gif')
+      .col-6.col-sm-8.align-self-center.text-left.p-0
+        .mr-4.my-4.ml-2
+          text.title-TC 專案詢問
+          br
+          text.title.DIN-Alternate #{i18n.t("app.project_inquiry")}
+      .col-12.p-0
+        form#formInquiryMobile.mx-4(action='/contact', method = 'post')
+          .form-group
+              label.sr-only(for='companyName') Company Name
+              input.form-control(type='text', name='companyName', data-name='Company Name', aria-describedby='emailHelp', placeholder='Name of Your Company*')
+          .form-group
+              label.sr-only(for='name') Name
+              input.form-control(type='text', name='name', data-name='Name', aria-describedby='emailHelp', placeholder='Your Name*')
+          .form-group
+              label.sr-only(for='email') Email
+              input.form-control(type='email', name='email', data-name='Email', aria-describedby='emailHelp', placeholder='Email*', oninvalid="this.setCustomValidity('請輸入正確的email格式')", oninput="this.setCustomValidity('')")
+          .form-group
+              label.sr-only(for='phone') Phone
+              input.form-control(type='tel', name='phone', data-name='Phone', aria-describedby='emailHelp', placeholder='Phone')
+          .form-group
+              label.sr-only(for='description') Description
+              textarea#description.form-control(type='text', name='description', rows="4", data-name='Description',  aria-describedby='emailHelp', placeholder='Description of Your Project Requirement*')
+          .form-group
+              - if (alert)
+                text(name="tooltip").text-small #{alert}
+              - else
+                text(name="tooltip").text-small
+          .form-group
+            button.btn.btn-black.btn-block.btn-send.mb-4(type='submit', name='send') 
+              text.lvh-6(style='letter-spacing: 2px;') #{i18n.t("app.send")}
+              img.send.float-right.mt-2(src='/images/send_arrow.png', alt='send')
+    //- email
+    .row.border-all
+      div.contact-email
+        img.contact-email-image(src='/images/contact_email_mobile.gif', alt='info@bycosmos.co')
+      //-.col-12.marquee-email
+        .justify-content-center.align-self-center.bg-red
+          span.h4.DIN-Alternate.font-weight-bold INFO@BYCOSMOS.CO
+          span.h4.DIN-Alternate.font-weight-bold INFO@BYCOSMOS.CO
+
+
+  script(type='text/javascript').
+    $(document).ready(function(){
+      var multiplier = 20;
+      var container =  $('.horizontal-wrapper');
+
+      container.mousewheel(function(e){
+        //-console.log(e.deltaX, e.deltaY, e.deltaFactor);
+        container.scrollLeft(container.scrollLeft()-e.deltaY*multiplier);
+        e.preventDefault();
+      });
+
+      //- lazyload
+      $("img.lazyload").lazyload({effect : "fadeIn"});
+
+      //- form submit action
+      $('#formInquiry').submit(function(e) {
+        var alertMessage = "*請輸入 ";
+        var validation = true;
+
+        if ($(this).find('input[name="companyName"]').val() == '') {
+          alertMessage +=  $(this).find('input[name="companyName"]').data('name') + ", ";
+          validation = false;
+        }
+        if ($(this).find('input[name="name"]').val() == '') {
+          alertMessage +=  $(this).find('input[name="name"]').data('name') + ", ";
+          validation = false;
+        }
+        if ($(this).find('input[name="email"]').val() == '') {
+          alertMessage +=  " " + $(this).find('input[name="email"]').data('name') + ", ";
+          validation = false;
+        }
+        if ($(this).find('textarea[name="description"]').val() == '') {
+          alertMessage +=  " " + $(this).find('textarea[name="description"]').data('name')+ ", ";
+          validation = false;
+        }
+
+        if (!validation) {
+          e.preventDefault();
+          var lastCommaIndex = alertMessage.lastIndexOf(",");
+          $(this).find('text[name="tooltip"]').text(alertMessage.substr(0,lastCommaIndex));
+          return false;
+        }
+        $(this).find('button[name="send"]').prop('disabled', true);
+      });
+
+      //- form mobile submit action
+      $('#formInquiryMobile').submit(function(e) {
+        var alertMessage = "*請輸入 ";
+        var validation = true;
+
+        if ($(this).find('input[name="companyName"]').val() == '') {
+          alertMessage +=  $(this).find('input[name="companyName"]').data('name') + ", ";
+          validation = false;
+        }
+        if ($(this).find('input[name="name"]').val() == '') {
+          alertMessage +=  $(this).find('input[name="name"]').data('name') + ", ";
+          validation = false;
+        }
+        if ($(this).find('input[name="email"]').val() == '') {
+          alertMessage +=  " " + $(this).find('input[name="email"]').data('name') + ", ";
+          validation = false;
+        }
+        if ($(this).find('textarea[name="description"]').val() == '') {
+          alertMessage +=  " " + $(this).find('textarea[name="description"]').data('name')+ ", ";
+          validation = false;
+        }
+
+        if (!validation) {
+          e.preventDefault();
+          var lastCommaIndex = alertMessage.lastIndexOf(",");
+          $(this).find('text[name="tooltip"]').text(alertMessage.substr(0,lastCommaIndex));
+          return false;
+        }
+        $(this).find('button[name="send"]').prop('disabled', true);
+      });
+    });
+
